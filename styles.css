@@ -1,0 +1,64 @@
+* {
+    border: unset;
+}
+
+body {
+    background-color: wheat;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.5em;
+}
+
+#wrap {
+    display: flex;
+    flex-direction: column;
+    margin: 25px;
+}
+
+h1 {
+    text-align: center;
+}
+
+#addTodos {
+    display: flex;
+    justify-content: space-around;
+    background-color: olive;
+    padding: 25px;
+    margin-bottom: 2em;
+}
+
+#addTodo {
+    padding: 10px;
+    width: 100%;
+    font-size: 1rem;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border: none;
+}
+
+button {
+    border: none;
+    text-decoration: none;
+    background: #0069ed;
+    color: #ffffff;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+}
+
+#todos-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.single-todo {
+    display: flex;
+    background-color: peru;
+    color: #ffffff;
+    margin-bottom: 1em;
+    padding: 20px;
+    justify-content: space-between;
+}
