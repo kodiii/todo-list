@@ -1,37 +1,47 @@
-const todoList = ['check 1', 'check 2', 'check 3']
-// console.log(todoList)
+const taskInput = document.getElementById('new-task-input')
+const addTaskBtn = document.getElementById('add-task-btn')
+const taskList = document.getElementById('task-list')
 
-function renderTodos() {
-    const todosContainer = document.getElementById('todos-container')
-    //todosContainer.innerHTML = ''
+// create task element items
+function createTaskElement() {
+    taskInput
+    const taskItem = document.createElement('li')
+    taskItem.className = 'task-item'
+    taskItem.textContent = taskInput.value
+    taskList.append(taskItem)
+    // console.log(taskItem)
 
-    for (let i = 0; i < todoList.length; i++) {
-
-        const todoEntry = document.createElement('span')
-        todoEntry.className = 'single-todo'
-        todoEntry.textContent = todoList[i]
-        // console.log(todoEntry)
-
-        const inputCheckBox = document.createElement('input')
-        inputCheckBox.style.className = 'todoCheckBox'
-        inputCheckBox.setAttribute('type', 'checkbox')
-        inputCheckBox.checked = false
-
-        todosContainer.append(todoEntry)
-        todoEntry.appendChild(inputCheckBox)
-    }
+    const deleteBtn = document.createElement('button')
+    deleteBtn.className = 'delete-btn'
+    deleteBtn.innerText = 'DELETE'
+    taskItem.append(deleteBtn)
 }
 
-renderTodos()
+// delete task
+function removeTask() {
+    const tasklist = document.getElementById('task-list')
+    const taskItem = document.getElementsByClassName('task-item')
+    // console.log(deleteBtn)
+}
 
-const unshiftBtn = document.getElementById('unshiftBtn')
-console.log(unshiftBtn)
-unshiftBtn.addEventListener('submit', function () {
-    const addTodo = document.getElementById('addTodo')
-    console.log(addTodo.value)
-    if (addTodo.value) {
-        todoList.unshift(addTodo.value)
-        renderTodos()
-        addTodo.value = ''
+removeTask()
+
+// event listener to create item with input text
+addTaskBtn.addEventListener('click', function (e) {
+    e.preventDefault()
+    if (taskInput.value) {
+        createTaskElement()
+        taskInput.value = ''
+    } else {
+        alert('Please add a task.')
     }
 })
+
+const deleteBtn = document.getElementsByTagName('button')
+
+deleteBtn.addEventListener('click', function (e) {
+    e.preventDefault()
+    // removeTask()
+
+})
+

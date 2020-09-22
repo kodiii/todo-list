@@ -1,5 +1,11 @@
+/* -----------
+general styles 
+-------------- */
+
 * {
     border: unset;
+    margin: 0;
+    padding: 0;
 }
 
 body {
@@ -8,6 +14,17 @@ body {
     font-size: 1.5em;
 }
 
+input:focus,
+textarea:focus,
+select:focus,
+button:focus {
+    outline: none;
+    border: none;
+}
+
+/* ------------------------------
+styles for input tasks section 
+------------------------------ */
 #wrap {
     display: flex;
     flex-direction: column;
@@ -16,9 +33,10 @@ body {
 
 h1 {
     text-align: center;
+    margin-bottom: 20px;
 }
 
-#addTodos {
+#input-task-container {
     display: flex;
     justify-content: space-around;
     background-color: olive;
@@ -26,39 +44,53 @@ h1 {
     margin-bottom: 2em;
 }
 
-#addTodo {
+#new-task-input {
     padding: 10px;
     width: 100%;
     font-size: 1rem;
+    border-radius: 5px 0 0 5px;
 }
 
-input:focus,
-textarea:focus,
-select:focus {
-    outline: none;
+#add-task-btn {
     border: none;
-}
-
-button {
-    border: none;
-    text-decoration: none;
     background: #0069ed;
     color: #ffffff;
     font-size: 1rem;
     cursor: pointer;
     text-align: center;
+    padding: 0 20px;
+    border-radius: 0 5px 5px 0;
 }
 
-#todos-container {
-    display: flex;
-    flex-direction: column;
+/* -------------------------------
+styles for task items list section
+------------------------------- */
+
+/* #task-list-container {
+    background-color: rgb(168, 179, 179);
+} */
+
+#task-list {
+    padding: 25px;
 }
 
-.single-todo {
+li {
+    text-decoration-style: none;
+}
+
+.task-item {
     display: flex;
-    background-color: peru;
+    background-color: rgb(160, 153, 150);
     color: #ffffff;
-    margin-bottom: 1em;
+    margin: 0.5em 0;
     padding: 20px;
     justify-content: space-between;
+    border-radius: 5px;
+}
+
+.delete-btn {
+    background-color: firebrick;
+    color: white;
+    border-radius: 3px;
+    padding: 10px 20px;
 }
