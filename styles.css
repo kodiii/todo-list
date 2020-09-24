@@ -9,7 +9,9 @@ general styles
 }
 
 body {
-    background-color: wheat;
+    max-width: 80%;
+    margin: auto;
+    background-color: #eae2b7;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 1.5em;
 }
@@ -34,14 +36,16 @@ styles for input tasks section
 h1 {
     text-align: center;
     margin-bottom: 20px;
+    color: ;
 }
 
 #input-task-container {
     display: flex;
     justify-content: space-around;
-    background-color: olive;
+    background-color: #003049;
     padding: 25px;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
+    border-radius: 5px;
 }
 
 #new-task-input {
@@ -65,13 +69,8 @@ h1 {
 /* -------------------------------
 styles for task items list section
 ------------------------------- */
-
-/* #task-list-container {
-    background-color: rgb(168, 179, 179);
-} */
-
 #task-list {
-    padding: 25px;
+    padding: 15px;
 }
 
 li {
@@ -80,17 +79,26 @@ li {
 
 .task-item {
     display: flex;
-    background-color: rgb(160, 153, 150);
-    color: #ffffff;
+    background-color: #fcbf49;
+    color: #003049;
     margin: 0.5em 0;
     padding: 20px;
     justify-content: space-between;
     border-radius: 5px;
 }
 
-.delete-btn {
-    background-color: firebrick;
+.complete-btn {
+    background-color: darkgrey;
     color: white;
     border-radius: 3px;
     padding: 10px 20px;
+    margin: 2px 5px;
+}
+
+.delete-btn {
+    background-color: #d62828;
+    color: white;
+    border-radius: 3px;
+    padding: 10px 20px;
+    margin: 2px 5px;
 }
