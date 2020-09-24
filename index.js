@@ -8,9 +8,11 @@ let savedData
 // variable to serialize localstorage keys
 let count = 0
 
-window.onload = function () {
+// function elementsData() {
 
-    document.getElementById('task-list').innerHTML = ''
+// }
+
+window.onload = function () {
 
     if (savedData !== null) {
 
@@ -18,6 +20,8 @@ window.onload = function () {
             // console.log(localStorage.key(i))
             let key = localStorage.key(i)
 
+            // create and append all new elements with localStorage
+            // data
             const taskItem = document.createElement('li')
             taskItem.textContent = localStorage.getItem(key)
             taskItem.className = 'task-item'
@@ -56,9 +60,12 @@ window.onload = function () {
 function createTask(e) {
     e.preventDefault()
 
+    // clear taskList element in way to not duplicate with
+    // the rendered elements onload
     taskList.innerHTML = ''
 
     if (taskInput.value) {
+
         savedData = localStorage.setItem('task' + count++, taskInput.value)
         // console.log(localStorage)
 
@@ -66,6 +73,8 @@ function createTask(e) {
             // console.log(localStorage.key(i))
             let key = localStorage.key(i)
 
+            // create and append all new elements with localStorage
+            // data
             const taskItem = document.createElement('li')
             taskItem.textContent = localStorage.getItem(key)
             taskItem.className = 'task-item'
