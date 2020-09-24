@@ -3,6 +3,7 @@ const addTaskBtn = document.getElementById('add-task-btn')
 const taskListContainer = document.getElementById('task-list-container')
 const taskList = document.getElementById('task-list')
 
+// localstorage initiate variable
 let savedData
 // variable to serialize localstorage keys
 let count = 0
@@ -12,9 +13,6 @@ window.onload = function () {
     document.getElementById('task-list').innerHTML = ''
 
     if (savedData !== null) {
-
-        //savedData = localStorage.localStorage.getItem(key)
-        // console.log(localStorage)
 
         for (let i = 0; i < localStorage.length; i++) {
             // console.log(localStorage.key(i))
@@ -39,7 +37,6 @@ window.onload = function () {
             btnContainer.append(deleteBtn)
 
             taskList.append(taskItem)
-            //taskList.style.display = 'none'
 
             // button event listeners to mark as complete and remove data tasks
             completeBtn.addEventListener('click', function () {
@@ -88,9 +85,9 @@ function createTask(e) {
             btnContainer.append(deleteBtn)
 
             taskList.append(taskItem)
-            //taskList.style.display = 'none'
 
-            // button event listeners to mark as complete and remove data tasks
+            // buttons event listeners to mark completed task
+            // and delete tasks from localstorage
             completeBtn.addEventListener('click', function () {
                 taskItem.style.textDecoration = 'line-through'
                 completeBtn.style.backgroundColor = '#f77f00'
@@ -109,12 +106,6 @@ function createTask(e) {
     // clear input field value
     taskInput.value = ''
 
-}
-
-function renderTasks() {
-    document.getElementsByClassName('li')
-    document.getElementsByClassName('complete-btn')
-    document.getElementsByClassName('delete-btn')
 }
 
 // event listener to create item with input text
