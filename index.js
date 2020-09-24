@@ -8,10 +8,6 @@ let savedData
 // variable to serialize localstorage keys
 let count = 0
 
-// function elementsData() {
-
-// }
-
 window.onload = function () {
 
     if (savedData !== null) {
