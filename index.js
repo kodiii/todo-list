@@ -28,7 +28,7 @@ window.onload = function () {
 
             const completeBtn = document.createElement('button')
             completeBtn.className = 'complete-btn'
-            completeBtn.innerText = 'COMPLETE'
+            completeBtn.innerText = 'COMPLETED'
             btnContainer.append(completeBtn)
 
             const deleteBtn = document.createElement('button')
@@ -49,6 +49,9 @@ window.onload = function () {
                 taskList.removeChild(taskItem)
             })
         }
+    } else {
+        savedData = null
+        console.log(`Data local storage is ${savedData}`)
     }
 }
 
@@ -81,7 +84,7 @@ function createTask(e) {
 
             const completeBtn = document.createElement('button')
             completeBtn.className = 'complete-btn'
-            completeBtn.innerText = 'COMPLETE'
+            completeBtn.innerText = 'COMPLETED'
             btnContainer.append(completeBtn)
 
             const deleteBtn = document.createElement('button')
@@ -95,7 +98,7 @@ function createTask(e) {
             // and delete tasks from localstorage
             completeBtn.addEventListener('click', function () {
                 taskItem.style.textDecoration = 'line-through'
-                completeBtn.style.backgroundColor = '#f77f00'
+                completeBtn.style.backgroundColor = 'lightseagreen'
             })
 
             deleteBtn.addEventListener('click', function () {
